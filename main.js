@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
             this.element.style.height = `${size}px`;
 
             // Spawn safely without overlapping! (skip strict checking on mobile to allow overlap)
+            this.x = Math.random() * (width - size);
+            this.y = Math.random() * (height - size);
             let safe = isMobileInit;
             let attempts = 0;
             while (!safe && attempts < 100) {
-                this.x = Math.random() * (width - size);
-                this.y = Math.random() * (height - size);
                 safe = true;
                 for (let b of existingBubbles) {
                     const cx1 = this.x + this.size / 2;
@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const distSq = (cx2 - cx1) * (cx2 - cx1) + (cy2 - cy1) * (cy2 - cy1);
                     if (distSq < Math.pow(this.size / 2 + b.size / 2, 2)) {
                         safe = false;
+                        this.x = Math.random() * (width - size);
+                        this.y = Math.random() * (height - size);
                         break;
                     }
                 }
