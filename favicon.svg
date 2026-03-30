@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="46" fill="#CCFF00" stroke="#1A1A1A" stroke-width="4"/>
+  <!-- Left curve line -->
+  <path d="M 20 20 Q 55 50 20 80" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+  <!-- Right curve line -->
+  <path d="M 80 20 Q 45 50 80 80" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+</svg>
